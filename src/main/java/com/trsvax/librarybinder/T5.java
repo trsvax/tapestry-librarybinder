@@ -369,5 +369,156 @@ public interface T5 {
 	 * @see PersistentFieldStrategy
 	 */
 	public PersistentFieldStrategy persistentFieldStrategy();
-
+	/**
+	 * Manages the persistent locale stored in the browser (inside the URL).
+	 * @see PersistentLocale
+	 */
+	public PersistentLocale persistentLocale();
+	/**
+	 * A source for PropertyConduits, which can be thought of as a compiled property path expression.
+	 * @see PropertyConduitSource
+	 */
+	public PropertyConduitSource propertyConduitSource();
+	/**
+	 * Defines a context for editing a property of a bean via BeanEditor.
+	 * @see PropertyEditContext
+	 */
+	public PropertyEditContext propertyEditContext();
+	/**
+	 * Provides context information needed when displaying a value.
+	 * @see PropertyOutputContext
+	 */
+	public PropertyOutputContext propertyOutputContext();
+	/**
+	 * Generic version of HttpServletRequest, used to encapsulate the Servlet API version, 
+	 * and to help bridge the differences between Servlet API and Porlet API.
+	 * @see Request
+	 */
+	public Request request();
+	/**
+	 * Service invoked when an uncaught exception occurs.
+	 * @see RequestExceptionHandler
+	 */
+	public RequestExceptionHandler requestExceptionHandler();
+	/**
+	 * Filter interface for RequestHandler.
+	 * @see RequestFilter
+	 */
+	public RequestFilter requestFilter();
+	/**
+	 * Service used to store the current request objects, both the Servlet API versions, and the Tapestry generic versions.
+	 * @see RequestGlobals
+	 */
+	public RequestGlobals requestGlobals();
+	/**
+	 * Service interface for the RequestHandler pipeline service.
+	 * @see RequestHandler
+	 */
+	public RequestHandler requestHandler();
+	/**
+	 * Responsible for determining which classpath resources require checksums, and for generating checksums for such resources.
+	 * @see ResourceDigestGenerator
+	 */
+	public ResourceDigestGenerator resourceDigestGenerator();
+	/**
+	 * API agnostic wrapper for generating a response.
+	 * @see Response
+	 */
+	public Response response();
+	/**
+	 * Used to determine if the client supports GZIP compression of the response.
+	 * @see ResponseCompressionAnalyzer
+	 */
+	public ResponseCompressionAnalyzer responseCompressionAnalyzer();
+	/**
+	 * Public facade around internal services related to rendering a markup response.
+	 * @see
+	 */
+	public ResponseRenderer responseRenderer();
+	/**
+	 * Used to create an SelectModel.
+	 * @see SelectModelFactory
+	 */
+	public SelectModelFactory selectModelFactory();
+	/**
+	 * Service interface for initializing a servlet application, as a pipeline.
+	 * @see ServletApplicationInitializer	
+	 */
+	public ServletApplicationInitializer servletApplicationInitializer();
+	/**
+	 * Filter interface for ServletApplicationInitializer.
+	 * @see ServletApplicationInitializerFilter
+	 */
+	public ServletApplicationInitializerFilter servletApplicationInitializerFilter();
+	/**
+	 * Generic version of HttpSession, used to bridge the gaps between the Servlet API and the Portlet API.
+	 * @see Session
+	 */
+	public Session session();
+	/**
+	 * Analyzes a session-persisted object, specifically to see if it is dirty or not.
+	 * @see SessionPersistedObjectAnalyzer
+	 */
+	public SessionPersistedObjectAnalyzer sessionPersistedObjectAnalyzer();
+	/**
+	 * Used by ExceptionDisplay to characterize each stack frame that is presented.
+	 * @see StackTraceElementAnalyzer
+	 */
+	public StackTraceElementAnalyzer stackTraceElementAnalyzer();
+	/**
+	 * A field defined by (or created within) a ClassTransformation, allowing the details of the field to be accessed or modified.
+	 * @see TransformField
+	 */
+	public TransformField transformField();
+	/**
+	 * A method defined by (or created within) a ClassTransformation, allowing for access and manipulation of the method.
+	 * @see TransformMethod
+	 */
+	public TransformMethod transformMethod();
+	/**
+	 * This service is used by TranslatorSource to specify Translator alternates: 
+	 * translators that are used when specified explicitly by name.
+	 * @see TranslatorAlternatesSource
+	 */
+	public TranslatorAlternatesSource translatorAlternatesSource();
+	/**
+	 * A source for Translators, either by name or by property type.
+	 * @see TranslatorSource
+	 */
+	public TranslatorSource translatorSource();
+	/**
+	 * Interface for objects which can periodically check for updates.
+	 * @see UpdateListener
+	 */
+	public UpdateListener updateListener();
+	/**
+	 * Manages a set of UpdateListeners.
+	 * @see UpdateListenerHub
+	 */
+	public UpdateListenerHub updateListenerHub();
+	/**
+	 * Service used to encode or decode strings that are placed into URLs.
+	 * @see URLEncoder
+	 */
+	public URLEncoder urlEncoder();
+	/**
+	 * Invoked to generate a list of validation constraint strings for a property.
+	 * @see ValidationConstraintGenerator
+	 */
+	public ValidationConstraintGenerator validationConstraintGenerator();
+	/**
+	 * Creates an instance of ValidationDecorator for a MarkupWriter.
+	 * @see ValidationDecoratorFactory	
+	 */
+	public ValidationDecoratorFactory validationDecoratorFactory();
+	/**
+	 * A source for ValueEncoder instances of a given type.
+	 * @see ValueEncoderFactory
+	 */
+	public ValueEncoderFactory valueEncoderFactory();
+	/**
+	 * A source for value encoders based on a property type.
+	 * @see ValueEncoderSource
+	 */
+	public ValueEncoderSource valueEncoderSource();
 }
