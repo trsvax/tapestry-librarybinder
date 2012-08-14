@@ -31,6 +31,10 @@ public interface T5 {
 	 * @see ApplicationStateManager
 	 */
 	public ApplicationStateManager applicationStateManager();
+	/**
+	 * Used by ApplicationStateManager to manage a specific kind of Session State Object (SSO) persistence.
+	 * @see ApplicationStatePersistenceStrategy
+	 */
 	public ApplicationStatePersistenceStrategy applicationStatePersistenceStrategy();
 	public ApplicationStatePersistenceStrategySource applicationStatePersistenceStrategySource();
 	public AssetFactory assetFactory();
@@ -77,6 +81,7 @@ public interface T5 {
 	public LinkCreationHub linkCreationHub();
 	public LinkCreationListener2 linkCreationListener2();
 	public LocalizationSetter localizationSetter();
+	
 	
 	
 	public PageRenderLinkSource pageRenderLinkSource();
