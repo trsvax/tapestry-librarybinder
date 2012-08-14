@@ -5,24 +5,48 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 import org.apache.tapestry5.ioc.ServiceBinder;
+import org.apache.tapestry5.ioc.ServiceBindingOptions;
 import org.apache.tapestry5.ioc.ServiceBuilder;
 import org.apache.tapestry5.ioc.ServiceResources;
 
 
 public class LibraryBuilder<T> implements ServiceBuilder<T> {
 	private final Class<?>[] interfaces;
-	
+
+	@SuppressWarnings("unchecked")
 	public LibraryBuilder(Class<T> clazz, ServiceBinder binder) {
 		interfaces = new Class[] { clazz };
 		for ( Method m : clazz.getDeclaredMethods() ) {
 			Binder args = m.getAnnotation(Binder.class);
 			if ( args != null ) {
-				binder.bind(m.getReturnType(),args.implementation());
+				ServiceBindingOptions options = binder.bind(m.getReturnType(),args.implementation());
+				if ( args.eagerLoad() ) {
+					options.eagerLoad();
+				}
+				if ( args.preventDecoration() ) {
+					options.preventDecoration();
+				}
+				if ( args.preventReloading() ) {
+					options.preventReloading();
+				}
+				if ( args.scope() != null ) {
+					options.scope(args.scope());
+				}
+				if ( args.id() != null ) {
+					options.withId(args.id());
+				}
+				if ( args.marker() != null ) {
+					options.withMarker(args.marker());
+				}
+				if ( args.simpleId() ) {
+					options.withSimpleId();
+				}
 			}
 		}
 	}
 
 	@Override
+	@SuppressWarnings("unchecked")
 	public T buildService(ServiceResources resources) {
 		return (T) Proxy.newProxyInstance(interfaces[0].getClassLoader(), interfaces, new Service(resources));
 	}
