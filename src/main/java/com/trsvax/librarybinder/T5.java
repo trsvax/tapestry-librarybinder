@@ -36,6 +36,10 @@ public interface T5 {
 	 * @see ApplicationStatePersistenceStrategy
 	 */
 	public ApplicationStatePersistenceStrategy applicationStatePersistenceStrategy();
+	/**
+	 * Used to provide access to ApplicationStatePersistenceStrategySource instances via a logical name for the stategy, such as "session".
+	 * @see ApplicationStatePersistenceStrategySource
+	 */
 	public ApplicationStatePersistenceStrategySource applicationStatePersistenceStrategySource();
 	public AssetFactory assetFactory();
 	public AssetPathConverter assetPathConverter();
