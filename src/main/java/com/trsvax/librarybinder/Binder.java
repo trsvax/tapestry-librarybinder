@@ -7,12 +7,13 @@ import java.lang.annotation.RetentionPolicy;
 public @interface Binder {
 	
 	public Class implementation();
-	public boolean eagerLoad();
-	public boolean preventDecoration();
-	public boolean preventReloading();
-	public String scope();
-	public String id();
-	public Class marker();
-	public boolean simpleId();
+	public boolean eagerLoad() default false;
+	public boolean preventDecoration() default false;
+	public boolean preventReloading() default false;
+	public String scope() default "";
+	public String id() default "";
+	//Use marker annotation instead
+	//public Class marker() default Object.class;
+	public boolean simpleId() default false;
 
 }

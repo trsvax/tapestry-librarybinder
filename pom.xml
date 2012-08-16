@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.trsvax.librarybinder</groupId>
+	<groupId>com.trsvax</groupId>
 	<artifactId>tapestry-librarybinder</artifactId>
 	<packaging>jar</packaging>
 	<name>tapestry-librarybinder</name>
@@ -17,9 +17,9 @@
 		</license>
 	</licenses>
 	<scm>
-		<url>https://github.com/trsvax/libratapestry-librarybinder</url>
-		<connection>scm:git:git://github.com/trsvax/tapestry-librarybinder</connection>
-		<developerConnection>scm:git:git@github.com:trsvax/tapestry-librarybinder</developerConnection>
+		<url>git@github.com:trsvax/tapestry-librarybinder.git</url>
+		<connection>scm:git:git@github.com:trsvax/tapestry-librarybinder.git</connection>
+		<developerConnection>scm:git:git@github.com:trsvax/tapestry-librarybinder.git</developerConnection>
 	</scm>
 	<developers>
 		<developer>

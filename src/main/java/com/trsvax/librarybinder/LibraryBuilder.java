@@ -8,6 +8,7 @@ import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.ServiceBindingOptions;
 import org.apache.tapestry5.ioc.ServiceBuilder;
 import org.apache.tapestry5.ioc.ServiceResources;
+import org.apache.tapestry5.ioc.annotations.Marker;
 
 
 public class LibraryBuilder<T> implements ServiceBuilder<T> {
@@ -18,6 +19,7 @@ public class LibraryBuilder<T> implements ServiceBuilder<T> {
 		interfaces = new Class[] { clazz };
 		for ( Method m : clazz.getDeclaredMethods() ) {
 			Binder args = m.getAnnotation(Binder.class);
+			Marker marker = m.getAnnotation(Marker.class);
 			if ( args != null ) {
 				ServiceBindingOptions options = binder.bind(m.getReturnType(),args.implementation());
 				if ( args.eagerLoad() ) {
@@ -35,8 +37,8 @@ public class LibraryBuilder<T> implements ServiceBuilder<T> {
 				if ( args.id() != null ) {
 					options.withId(args.id());
 				}
-				if ( args.marker() != null ) {
-					options.withMarker(args.marker());
+				if ( marker != null ) {
+					options.withMarker(marker.value());
 				}
 				if ( args.simpleId() ) {
 					options.withSimpleId();
