@@ -1,0 +1,7 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="tapestry-librarybinder Application Test Suite" annotations="1.5">
+	<test name="Library Binder Integration Tests"  enabled="true">
+	</test>
+	<test name="Unit Tests">
+	</test>
+</suite>
