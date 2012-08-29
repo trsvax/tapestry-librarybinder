@@ -63,7 +63,11 @@ public class LibraryBuilder<T> implements ServiceBuilder<T> {
 		@Override
 		public Object invoke(Object proxy, Method method, Object[] args)
 				throws Throwable {
+			Marker marker = method.getAnnotation(Marker.class);
 			Class<?> serviceInterface = method.getReturnType();
+			if ( marker != null ) {
+				return resources.getService(serviceInterface, marker.value()); 
+			}
 			return resources.getService(serviceInterface);
 		}
 		
